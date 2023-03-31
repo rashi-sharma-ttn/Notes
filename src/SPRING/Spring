@@ -1,0 +1,48 @@
+The Spring Framework (Spring) is an open-source application framework that provides infrastructure
+support for developing Java applications.
+Spring helps developers create high performing applications using plain old Java objects (POJOs).
+
+A framework is a large body of predefined code to which developers can add code to solve a problem in a
+specific domain. There are many popular Java frameworks including Java Server Faces (JSF), Maven,
+Hibernate, Struts, and Spring.
+
+
+Why Spring?
+Java programs are complex and feature many heavyweight components.
+Spring is considered to be a secure, low-cost and flexible framework. Spring improves coding efficiency and
+reduces overall application development time because it is lightweight -- efficient at utilizing system
+resources -- and has a lot of support.
+Spring removes tedious configuration work so that developers can focus on writing business logic.
+Spring handles the infrastructure so developers can focus on the application.
+
+
+How Spring works ---
+A web application (layered architecture) commonly includes three layers:
+
+    Presentation/view layer (UI) - This is the outermost layer which handles the presentation of content
+    and interaction with the user.
+    Business logic layer - The central layer that deals with the logic of a program.
+    Data access layer - The deep layer that deals with data retrieval from sources.
+
+Each layer is dependent on the other for an application to work. In other words, the presentation layer
+talks to the business logic layer, which talks to the data access layer. Dependency is what each layer
+needs to perform its function. A typical application has thousands of classes and many dependencies.
+
+
+Without a Spring Framework, application code tends to be tightly coupled (interdependent), which is not
+considered good coding practice. Loose coupling is ideal because loosely coupled components are independent,
+meaning changes in one will not affect the operation of others.
+
+Spring’s core logic is dependency injection. Dependency injection is a programming pattern that allows
+developers to build more decoupled architectures.
+
+
+For the Spring Framework to instantiate objects and populate the dependencies, a programmer simply tells
+Spring which objects to manage and what the dependencies are for each class. A developer does so by using
+annotations like:
+@component - Lets Spring know which classes to manage (create). Marks the beans (objects) as managed
+components, which means that Spring will autodetect these classes for dependency injection.
+
+@autowired - Tells Spring how to handle the instantiation of the class (so it starts looking for that
+dependency among components/classes to find a match). This spares developers from wiring with code and
+allows Spring to find what needs to be injected where.

@@ -1,0 +1,21 @@
+Inversion of Control - When we give control of object creation to spring and it dynamically creates object
+of all dependencies at runtime.
+
+The container will           -create the objects,
+                             -wire them together, (hold them in memory)
+                             -configure them, (inject object as required)
+                             -manage their complete life cycle from creation till destruction.
+
+
+The Spring IoC container makes use of Java POJO classes and configuration metadata to produce a fully
+configured and executable system or application.
+
+                        Java POJO classes
+                              |
+                              |
+          Meta data ---> Spring Container
+                              |
+                              |    Final result
+                              |
+                        Ready to use App.
+

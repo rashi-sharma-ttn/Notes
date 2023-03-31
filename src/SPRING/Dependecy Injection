@@ -1,0 +1,39 @@
+Dependency Injection (or sometime called wiring) helps in gluing these classes together and at the same
+time keeping them independent.
+
+Dependency injection means that Spring understands the different Java annotations that a developer puts
+on top of classes. Spring knows that the developer wants to create an instance of a class and that Spring
+should manage it. Spring also understands the dependency and makes sure that all instances created have
+properly populated dependencies.
+EXAMPLE- class A is dependent of class B. Now, let's look at the second part, injection. All this means is,
+class B will get injected into class A by the IoC.
+
+
+OLD WAY -     public class TextEditor {
+                 private SpellChecker spellChecker;
+
+                 public TextEditor() {
+                    spellChecker = new SpellChecker();
+                 }
+              }
+
+NEW WAY -     public class TextEditor {
+(Ioc way)        private SpellChecker spellChecker;
+
+                 public TextEditor(SpellChecker spellChecker) {
+                    this.spellChecker = spellChecker;
+                 }
+              }
+
+Methods of injecting dependency             - Constructor injection
+                                            - Setter Injection
+
+Here, we have removed total control from the TextEditor and kept it somewhere else (i.e. XML configuration
+file) and the dependency (i.e. class SpellChecker) is being injected into the class TextEditor through a
+Class Constructor.
+
+TextEditor class where we will create a SpellChecker instance. This instance will be used to call setter
+methods to initialize TextEditor's properties.
+
+Constructor-based and Setter-based DI but it is a good rule of thumb to use constructor arguments for
+mandatory dependencies and setters for optional dependencies.
