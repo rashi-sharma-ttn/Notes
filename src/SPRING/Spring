@@ -47,7 +47,6 @@ components, which means that Spring will autodetect these classes for dependency
 dependency among components/classes to find a match). This spares developers from wiring with code and
 allows Spring to find what needs to be injected where.
 
-
                                   LOOSELY COUPLED
 Loose coupling is when an object gets the object to be used from external sources.
 
