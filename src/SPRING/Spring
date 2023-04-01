@@ -20,7 +20,7 @@ How Spring works ---
 A web application (layered architecture) commonly includes three layers:
 
     Presentation/view layer (UI) - This is the outermost layer which handles the presentation of content
-    and interaction with the user.
+                                   and interaction with the user.
     Business logic layer - The central layer that deals with the logic of a program.
     Data access layer - The deep layer that deals with data retrieval from sources.
 
@@ -46,3 +46,11 @@ components, which means that Spring will autodetect these classes for dependency
 @autowired - Tells Spring how to handle the instantiation of the class (so it starts looking for that
 dependency among components/classes to find a match). This spares developers from wiring with code and
 allows Spring to find what needs to be injected where.
+
+
+                                  LOOSELY COUPLED
+Loose coupling is when an object gets the object to be used from external sources.
+
+                                  TIGHTLY COUPLED
+When a group of classes is highly dependent on each other, or we've classes that assume a lot of
+responsibilities is called tight coupling.

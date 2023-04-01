@@ -1,0 +1,70 @@
+                                        Mockito mock() method
+
+    mock() method with Class: It is used to create mock objects of a concrete class or an interface. It
+                              takes a class or an interface name as a parameter.
+                              Syntax: <T> mock(Class<T> classToMock)
+    mock() method with Answer: It is used to create mock objects of a class or interface with a specific
+                               procedure. It takes Answer as a parameter along with the class or
+                               interface name. The Answer is an enumeration of pre-configured mock answers.
+                              Syntax: <T> mock(Class<T> classToMock, Answer defaultAnswer)
+    mock() method with MockSettings: It is used to create mock objects with some non-standard settings. It
+                                     takes MockSettings as an additional setting parameter along with the
+                                     class or interface name. MockSettings allows the creation of mock
+                                     objects with additional settings.
+                               Syntax: <T> mock(Class<T> classToMock, MockSettings mockSettings)
+    mock() method with ReturnValues: It allows the creation of mock objects of a given class or interface.
+                                     Now, it is deprecated, as ReturnValues are replaced with Answer.
+                               Syntax: <T> mock(Class<T> classToMock, ReturnValues returnValues)
+    mock() method with String: It is used to create mock objects by specifying the mock names. In debugging,
+                               naming mock objects can be helpful whereas, it is a bad choice using with
+                               large and complex code.
+                               Syntax: <T> mock(Class<T> classToMock, String name)
+
+    how to use mock() method:    ToDoService doService = mock(ToDoService.class);
+
+
+                                         OTHER METHODS
+    when() method
+        It enables stubbing methods. It should be used when we want to mock to return specific values when
+        particular methods are called. In simple terms, "When the XYZ() method is called, then return ABC." It is mostly used when there is some condition to execute.
+
+        Syntax: <T> when(T methodCall)
+        Code snippet :   when(mock.someCode ()).thenReturn(5);
+
+    verify() method
+        The verify() method is used to check whether some specified methods are called or not.
+        It is used at the bottom of the testing code to assure that the defined methods are called.
+
+        verify() method: It verifies certain behavior happened once.
+          Syntax: <T> verify(T mock)
+        verify() method with VerificationMode: It verifies exact number of times, or never.
+          Syntax: <T> verify(T mock, VerificationMode mode)
+
+    reset() method
+        used to reset the mocks. Usually, the reset() method results in a lengthy code and poor tests.
+        It's better to create new mocks rather than using reset() method. That is why the reset() method
+        is rarely used in testing.
+
+    times() method
+        It is used to verify the exact number of method invocations,
+
+    never() method
+        It is used to verify that the interaction did not happen. The signature of the never() method is:
+            public static VerificationMode never() {
+                return times(0);
+            }
+
+    after() method
+        It allows Mockito to verify over a given period of time.
+        The signature of the after() method is:
+            public static VerificationAfterDelay after(long millis) {
+                return new After(millis, VerificationModeFactory.times(1));
+            }
+
+    timeout() method
+        It allows Mockito to perform verification with a timeout. It instructs a verify to wait for a
+        specific period of time for a particular interaction rather than to fail immediately.
+
+    ------he timeout() method differs from the after() method as after() method waits for the full period
+          unless the final result is declared whereas the timeout() method will stop as soon as the
+          verification passes.   ---------
